@@ -15,3 +15,11 @@ endif
 	git commit -m "📦 $(m) — $(timestamp)"
 	git push origin main
 	@echo "✅ Pushed with message: 📦 $(m) — $(timestamp)"
+
+# 🌐 Open GitHub wiki in browser
+open-wiki:
+ifndef repo
+	$(error Usage: make open-wiki repo=your-org/your-repo)
+endif
+	@echo "🌐 Opening: https://github.com/$(repo)/wiki"
+	open https://github.com/$(repo)/wiki
